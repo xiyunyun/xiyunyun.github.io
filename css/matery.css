@@ -241,7 +241,7 @@ mark {
 }
 
 .bg-color {
-    background-image: linear-gradient(to right, #7bc1ff 0%, #7bc1ff 100%);
+    background-image: linear-gradient(to right, #1a6f79 0%, #47b7c3 100%);
 
 }
 
@@ -600,7 +600,7 @@ header .go-back i {
 
     0%,
     100% {
-        background: rgba(111, 229, 247, 0.25);
+        background: rgba(155, 242, 255, 0.30);
 
     }
 }
