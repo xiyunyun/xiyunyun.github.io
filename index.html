@@ -310,10 +310,10 @@
                                 "And lost be the day to us in which a measure hath not been danced. And false be every truth which hath not had laughter along with it",
                             
                         ],
-                        startDelay: 200,
-                        typeSpeed: 300,
+                        startDelay: 100,
+                        typeSpeed: 50,
                         loop: true,
-                        backSpeed: 150,
+                        backSpeed: 20,
                         showCursor: true
                     });
                 </script>
@@ -325,9 +325,7 @@
 
 
 <script>
-    // 每天切换 banner 图.  Switch banner image every day.
-    var bannerUrl = "/medias/banner/" + new Date().getDay() + '.jpg';
-    $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
+    $('.bg-cover').css('background-image', 'url(/medias/banner/0.jpg)');
 </script>
 
 
@@ -338,7 +336,7 @@
                 </a>
 
                 
-                    <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light btn" target="_blank">
+                    <a href="https://github.com/xiyunyun" class="waves-effect waves-light btn" target="_blank">
                         <i class="fab fa-github-alt"></i>Github
                     </a>
                 
@@ -350,13 +348,7 @@
     </a>
     
 
-        <!-- 
-            <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1181062873"
-                class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1181062873" data-position="top"
-                data-delay="50">
-                <i class="fab fa-qq"></i>
-            </a>
-             -->
+        <!--  -->
 
         
             <a href="https://space.bilibili.com/215190289" class="tooltipped" target="_blank" data-tooltip="访问我的哔哩哔哩"
@@ -488,7 +480,7 @@
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="虚幻5和blender的交互逻辑">
+                            <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="虚幻5和blender的交互逻辑">
                             
                             <span class="card-title">虚幻5和blender的交互逻辑</span>
                         </div>
@@ -527,7 +519,7 @@
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="关于熙云">
+                            <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="关于熙云">
                             
                             <span class="card-title">关于熙云</span>
                         </div>
@@ -564,7 +556,7 @@
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="分类">
+                            <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="分类">
                             
                             <span class="card-title">分类</span>
                         </div>
@@ -604,63 +596,9 @@
 
     <footer class="page-footer bg-color">
     
-        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
-<style>
-    .aplayer .aplayer-lrc p {
-        
-        display: none;
-        
-        font-size: 12px;
-        font-weight: 700;
-        line-height: 16px !important;
-    }
-
-    .aplayer .aplayer-lrc p.aplayer-lrc-current {
-        
-        display: none;
-        
-        font-size: 15px;
-        color: #42b983;
-    }
-
-    
-    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
-        left: -66px !important;
-    }
-
-    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
-        left: 0px !important;
-    }
-
-    
-</style>
-<div class="">
-    
-    <div class="row">
-        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
-                   server="netease"
-                   type="playlist"
-                   id="503838841"
-                   fixed='true'
-                   autoplay='false'
-                   theme='#42b983'
-                   loop='all'
-                   order='random'
-                   preload='auto'
-                   volume='0.7'
-                   list-folded='true'
-        >
-        </meting-js>
-    </div>
-</div>
-
-<script src="/libs/aplayer/APlayer.min.js"></script>
-<script src="/libs/aplayer/Meting.min.js"></script>
-
-    
 
     <div class="container row center-align"
-         style="margin-bottom: 0px !important;">
+         style="margin-bottom: 15px !important;">
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
@@ -694,6 +632,60 @@
 
             <!-- 运行天数提醒. -->
             
+                <span id="sitetime"> Loading ...</span>
+                <script>
+                    var calcSiteTime = function () {
+                        var seconds = 1000;
+                        var minutes = seconds * 60;
+                        var hours = minutes * 60;
+                        var days = hours * 24;
+                        var years = days * 365;
+                        var today = new Date();
+                        var startYear = "2022";
+                        var startMonth = "7";
+                        var startDate = "25";
+                        var startHour = "0";
+                        var startMinute = "0";
+                        var startSecond = "0";
+                        var todayYear = today.getFullYear();
+                        var todayMonth = today.getMonth() + 1;
+                        var todayDate = today.getDate();
+                        var todayHour = today.getHours();
+                        var todayMinute = today.getMinutes();
+                        var todaySecond = today.getSeconds();
+                        var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                        var diff = t2 - t1;
+                        var diffYears = Math.floor(diff / years);
+                        var diffDays = Math.floor((diff / days) - diffYears * 365);
+
+                        // 区分是否有年份.
+                        var language = 'zh-CN';
+                        if (startYear === String(todayYear)) {
+                            document.getElementById("year").innerHTML = todayYear;
+                            var daysTip = 'This site has been running for ' + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                daysTip = '本站已运行 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                daysTip = '本站已運行 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = daysTip;
+                        } else {
+                            document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                            var yearsAndDaysTip = 'This site has been running for ' + diffYears + ' years and '
+                                + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                yearsAndDaysTip = '本站已运行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                yearsAndDaysTip = '本站已運行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = yearsAndDaysTip;
+                        }
+                    }
+
+                    calcSiteTime();
+                </script>
+            
             <br>
             
         </div>
@@ -704,13 +696,7 @@
     </a>
     
 
-        <!-- 
-            <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1181062873"
-                class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1181062873" data-position="top"
-                data-delay="50">
-                <i class="fab fa-qq"></i>
-            </a>
-             -->
+        <!--  -->
 
         
             <a href="https://space.bilibili.com/215190289" class="tooltipped" target="_blank" data-tooltip="访问我的哔哩哔哩"
@@ -910,6 +896,8 @@ $(function () {
 
     
 
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
     
 
     
