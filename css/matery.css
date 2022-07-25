@@ -242,7 +242,7 @@ mark {
 
 .bg-color {
     background-image: linear-gradient(to right, #1a6f79 0%, #47b7c3 100%);
-
+    opacity: 0.9
 }
 
 .text-color {
@@ -600,7 +600,7 @@ header .go-back i {
 
     0%,
     100% {
-        background: rgba(155, 242, 255, 0.30);
+        background: rgba(62, 159, 174, 0.36);
 
     }
 }
