@@ -300,7 +300,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    174
+                    470
                 </div>
                 
 
@@ -329,18 +329,29 @@
             <div id="articleContent">
                 <blockquote>
 <h1 id="工程的基本设置"><a href="#工程的基本设置" class="headerlink" title="工程的基本设置"></a>工程的基本设置</h1></blockquote>
-<h2 id="1-导入PMX模型以及分离"><a href="#1-导入PMX模型以及分离" class="headerlink" title="1. 导入PMX模型以及分离"></a>1. 导入PMX模型以及分离</h2><ol>
+<h2 id="1-导入PMX模型以及分离"><a href="#1-导入PMX模型以及分离" class="headerlink" title="1. 导入PMX模型以及分离"></a>1. 导入PMX模型以及分离</h2><h3 id="1-1-必要的材质操作"><a href="#1-1-必要的材质操作" class="headerlink" title="1.1 必要的材质操作"></a>1.1 必要的材质操作</h3><ol>
 <li>使用MMD_Tools导入一个PMX模型，比例设置为0.1</li>
 <li>选择骨架，将模型转换为Blender材质</li>
 <li>选择模型，转换材质为Cycles</li>
 <li>选择模型，将模型按照材质分离</li>
 </ol>
-<h2 id="2-创建基础的节点设置"><a href="#2-创建基础的节点设置" class="headerlink" title="2. 创建基础的节点设置"></a>2. 创建基础的节点设置</h2><ol>
+<h2 id="2-创建基础的节点设置"><a href="#2-创建基础的节点设置" class="headerlink" title="2. 创建基础的节点设置"></a>2. 创建基础的节点设置</h2><h3 id="2-1-节点的基本结构"><a href="#2-1-节点的基本结构" class="headerlink" title="2.1 节点的基本结构"></a>2.1 节点的基本结构</h3><ol>
 <li>选择肌肤模型，添加层权重，并且创建两个BSDF材质，一个为肉色，一个为黑丝色</li>
 <li>使用混合着色器将两个色彩连接起来，并且将面朝向连接至系数</li>
-<li>为层权重添加颜色渐变和混合RGB，以控制黑丝和肉体的比例<br><img src="/public/medias/blog_img/blender_1.png"> </li>
-<li>为黑丝添加由浅入深的效果</li>
+<li>为层权重添加颜色渐变和混合RGB，以控制黑丝和肉体的比例<br><img src="https://s1.ax1x.com/2022/08/08/vMkNTK.png" alt="节点如图"></li>
 </ol>
+<h2 id="3-为丝袜添加特殊效果"><a href="#3-为丝袜添加特殊效果" class="headerlink" title="3. 为丝袜添加特殊效果"></a>3. 为丝袜添加特殊效果</h2><h3 id="3-1-实现丝袜网格的效果"><a href="#3-1-实现丝袜网格的效果" class="headerlink" title="3.1 实现丝袜网格的效果"></a>3.1 实现丝袜网格的效果</h3><ol>
+<li><p>为黑丝添加由浅入深的效果,创建两个颜色渐变和一个渐变纹理，并且将其中一个改为白黑白的效果，Ctrl+T为渐变纹理添加坐标，选择UV或者位置进行调整。最后将第二个颜色渐变连接至之前的混合RGB，并且调整为变亮 </p>
+</li>
+<li><p>为黑丝添加纹理材质，让质感变的更加真实<br>首先添加噪波纹理，Ctrl+T为他创建坐标节点，将映射的X缩放改为自己想要的数值<br>接着复制一个噪波纹理，将Y改为自己想要的数值，并且修改噪波纹理的数值。</p>
+</li>
+</ol>
+<h3 id="3-2-连接繁多的效果"><a href="#3-2-连接繁多的效果" class="headerlink" title="3.2 连接繁多的效果"></a>3.2 连接繁多的效果</h3><ol start="3">
+<li>然后将两个噪波纹理使用混合RGB连接在一起，接着将混合好的噪波再使用混合RGB和基础色连接在一起，并且都改为正片叠底<br><img src="https://s1.ax1x.com/2022/08/08/vMkwfe.png" alt="节点如图"></li>
+</ol>
+<blockquote>
+<h4 id="基础工作至此已经完成，后续依然可为丝袜添加鎏金纹理，破洞等特殊效果"><a href="#基础工作至此已经完成，后续依然可为丝袜添加鎏金纹理，破洞等特殊效果" class="headerlink" title="基础工作至此已经完成，后续依然可为丝袜添加鎏金纹理，破洞等特殊效果"></a>基础工作至此已经完成，后续依然可为丝袜添加鎏金纹理，破洞等特殊效果</h4></blockquote>
+<h2 id="最终效果"><a href="#最终效果" class="headerlink" title="最终效果"></a>最终效果</h2><p><img src="https://s1.ax1x.com/2022/08/08/vMk6mt.png" alt="远景效果"><br><img src="https://s1.ax1x.com/2022/08/08/vMkc0P.png" alt="近景细节"></p>
 
                 
             </div>
@@ -808,7 +819,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">727</span>
+                        class="white-color">1k</span>
             
             
             
