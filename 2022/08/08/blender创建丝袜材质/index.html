@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="虚幻5和blender的交互逻辑, 云儿飘过的地方">
-    <meta name="description" content="虚幻5和blender的交互逻辑笔记">
+    <meta name="keywords" content="blender创建丝袜材质, 云儿飘过的地方">
+    <meta name="description" content="blender创建丝袜材质流">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -28,7 +28,7 @@
     </style>
 
 
-    <title>虚幻5和blender的交互逻辑 | 云儿飘过的地方</title>
+    <title>blender创建丝袜材质 | 云儿飘过的地方</title>
     <link rel="icon" type="image/png" href="/%E4%BA%91.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -149,12 +149,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/blog_img/reproduction%20(2).png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">虚幻5和blender的交互逻辑</h1>
+                    <h1 class="description center-align post-title">blender创建丝袜材质</h1>
                 </div>
             </div>
         </div>
@@ -274,10 +274,6 @@
                                 <span class="chip bg-color">Blender</span>
                             </a>
                         
-                            <a href="/tags/Unreal5/">
-                                <span class="chip bg-color">Unreal5</span>
-                            </a>
-                        
                     </div>
                     
                 </div>
@@ -290,21 +286,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-08-02
+                    2022-08-08
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-09-02
+                    2022-09-27
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    502
+                    470
                 </div>
                 
 
@@ -331,48 +327,32 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="《虚幻5和blender的交互逻辑》"><a href="#《虚幻5和blender的交互逻辑》" class="headerlink" title="《虚幻5和blender的交互逻辑》"></a>《虚幻5和blender的交互逻辑》</h1><blockquote>
-<h1 id="分离材质纹理贴图以及模型本身"><a href="#分离材质纹理贴图以及模型本身" class="headerlink" title="分离材质纹理贴图以及模型本身"></a>分离材质纹理贴图以及模型本身</h1></blockquote>
-<h2 id="1-贴图与纹理"><a href="#1-贴图与纹理" class="headerlink" title="1. 贴图与纹理"></a>1. 贴图与纹理</h2><h3 id="1-1-法线贴图的基本设置"><a href="#1-1-法线贴图的基本设置" class="headerlink" title="1.1 法线贴图的基本设置"></a>1.1 法线贴图的基本设置</h3><p>1.压缩方式应为法线模式</p>
-<p>2.分组应在世界法线贴图组 （并不是必须的）</p>
-<p>3.确保sRGB为关闭状态，法线贴图并没有颜色信息</p>
-<h3 id="1-2-纹理贴图的基本设置"><a href="#1-2-纹理贴图的基本设置" class="headerlink" title="1.2 纹理贴图的基本设置"></a>1.2 纹理贴图的基本设置</h3><p>1.压缩方式为默认纹理</p>
-<p>2.分组在世界贴图中</p>
-<p>3.确保sRGB为打开状态，纹理贴图为包含颜色信息，为颜色纹理</p>
-<h3 id="1-3-粗糙度纹理"><a href="#1-3-粗糙度纹理" class="headerlink" title="1.3 粗糙度纹理"></a>1.3 粗糙度纹理</h3><ol>
-<li><p>压缩方式为默认纹理</p>
+                <blockquote>
+<h1 id="工程的基本设置"><a href="#工程的基本设置" class="headerlink" title="工程的基本设置"></a>工程的基本设置</h1></blockquote>
+<h2 id="1-导入PMX模型以及分离"><a href="#1-导入PMX模型以及分离" class="headerlink" title="1. 导入PMX模型以及分离"></a>1. 导入PMX模型以及分离</h2><h3 id="1-1-必要的材质操作"><a href="#1-1-必要的材质操作" class="headerlink" title="1.1 必要的材质操作"></a>1.1 必要的材质操作</h3><ol>
+<li>使用MMD_Tools导入一个PMX模型，比例设置为0.1</li>
+<li>选择骨架，将模型转换为Blender材质</li>
+<li>选择模型，转换材质为Cycles</li>
+<li>选择模型，将模型按照材质分离</li>
+</ol>
+<h2 id="2-创建基础的节点设置"><a href="#2-创建基础的节点设置" class="headerlink" title="2. 创建基础的节点设置"></a>2. 创建基础的节点设置</h2><h3 id="2-1-节点的基本结构"><a href="#2-1-节点的基本结构" class="headerlink" title="2.1 节点的基本结构"></a>2.1 节点的基本结构</h3><ol>
+<li>选择肌肤模型，添加层权重，并且创建两个BSDF材质，一个为肉色，一个为黑丝色</li>
+<li>使用混合着色器将两个色彩连接起来，并且将面朝向连接至系数</li>
+<li>为层权重添加颜色渐变和混合RGB，以控制黑丝和肉体的比例<br><img src="https://s1.ax1x.com/2022/08/08/vMkNTK.png" alt="节点如图"></li>
+</ol>
+<h2 id="3-为丝袜添加特殊效果"><a href="#3-为丝袜添加特殊效果" class="headerlink" title="3. 为丝袜添加特殊效果"></a>3. 为丝袜添加特殊效果</h2><h3 id="3-1-实现丝袜网格的效果"><a href="#3-1-实现丝袜网格的效果" class="headerlink" title="3.1 实现丝袜网格的效果"></a>3.1 实现丝袜网格的效果</h3><ol>
+<li><p>为黑丝添加由浅入深的效果,创建两个颜色渐变和一个渐变纹理，并且将其中一个改为白黑白的效果，Ctrl+T为渐变纹理添加坐标，选择UV或者位置进行调整。最后将第二个颜色渐变连接至之前的混合RGB，并且调整为变亮 </p>
 </li>
-<li><p>分组在世界贴图中</p>
-</li>
-<li><p>确保sRGB为关闭状态，粗糙度纹理并没有颜色信息</p>
+<li><p>为黑丝添加纹理材质，让质感变的更加真实<br>首先添加噪波纹理，Ctrl+T为他创建坐标节点，将映射的X缩放改为自己想要的数值<br>接着复制一个噪波纹理，将Y改为自己想要的数值，并且修改噪波纹理的数值。</p>
 </li>
 </ol>
-<h3 id="1-4-模型本身"><a href="#1-4-模型本身" class="headerlink" title="1.4 模型本身"></a>1.4 模型本身</h3><h4 id="1-1-格式的导出和导入"><a href="#1-1-格式的导出和导入" class="headerlink" title="1.1 格式的导出和导入"></a>1.1 格式的导出和导入</h4><ol>
-<li><p>支持的模型格式中，纯粹的网格体fbx的还原效果为最佳</p>
-</li>
-<li><p>在理想情况下，导入最纯粹的白模，并且在材质节点工具中，将单独的材质纹理法线进行单独的节点控制，已达到最完美的效果</p>
-</li>
-</ol>
-<h4 id="1-2-MMD模型转换格式导入UE"><a href="#1-2-MMD模型转换格式导入UE" class="headerlink" title="1.2 MMD模型转换格式导入UE"></a>1.2 MMD模型转换格式导入UE</h4><ol>
-<li>将PMX文件通过MMD_Tools导入blender，将材质纹理转换为blender样式</li>
-<li>删除模型的刚体和关节层级（一定要删除层次）</li>
-<li>点击骨架，导出为FBX</li>
-<li>打开UE，导入FBX文件，如果需要动画就导入动画，如果不需要动画就取消勾选（FBX会分离所有的单独材质文件，如果出现材质显示的问题，请打开模型查看贴图元素是否错位）</li>
+<h3 id="3-2-连接繁多的效果"><a href="#3-2-连接繁多的效果" class="headerlink" title="3.2 连接繁多的效果"></a>3.2 连接繁多的效果</h3><ol start="3">
+<li>然后将两个噪波纹理使用混合RGB连接在一起，接着将混合好的噪波再使用混合RGB和基础色连接在一起，并且都改为正片叠底<br><img src="https://s1.ax1x.com/2022/08/08/vMkwfe.png" alt="节点如图"></li>
 </ol>
 <blockquote>
-<h1 id="Unreal导入Blender纹理材质节点设置"><a href="#Unreal导入Blender纹理材质节点设置" class="headerlink" title="Unreal导入Blender纹理材质节点设置"></a>Unreal导入Blender纹理材质节点设置</h1></blockquote>
-<h2 id="2-共同的基础节点"><a href="#2-共同的基础节点" class="headerlink" title="2. 共同的基础节点"></a>2. 共同的基础节点</h2><h3 id="2-1-UV节点"><a href="#2-1-UV节点" class="headerlink" title="2.1 UV节点"></a>2.1 UV节点</h3><ol>
-<li>UV节点用来连接基本的纹理</li>
-</ol>
-<h3 id="2-2-normal节点"><a href="#2-2-normal节点" class="headerlink" title="2.2 normal节点"></a>2.2 normal节点</h3><ol>
-<li>normal节点用来连接法线纹理</li>
-</ol>
-<h3 id="2-3-粗糙度节点"><a href="#2-3-粗糙度节点" class="headerlink" title="2.3 粗糙度节点"></a>2.3 粗糙度节点</h3><ol>
-<li>粗糙度节点用来连粗糙度纹理</li>
-</ol>
-<blockquote>
-<h1 id="Unreal与Blender两者之间不同的图形接口问题"><a href="#Unreal与Blender两者之间不同的图形接口问题" class="headerlink" title="Unreal与Blender两者之间不同的图形接口问题"></a>Unreal与Blender两者之间不同的图形接口问题</h1></blockquote>
-<h2 id="3-贴图格式问题"><a href="#3-贴图格式问题" class="headerlink" title="3. 贴图格式问题"></a>3. 贴图格式问题</h2><h3 id="3-1"><a href="#3-1" class="headerlink" title="3.1"></a>3.1</h3>
+<h4 id="基础工作至此已经完成，后续依然可为丝袜添加鎏金纹理，破洞等特殊效果"><a href="#基础工作至此已经完成，后续依然可为丝袜添加鎏金纹理，破洞等特殊效果" class="headerlink" title="基础工作至此已经完成，后续依然可为丝袜添加鎏金纹理，破洞等特殊效果"></a>基础工作至此已经完成，后续依然可为丝袜添加鎏金纹理，破洞等特殊效果</h4></blockquote>
+<h2 id="最终效果"><a href="#最终效果" class="headerlink" title="最终效果"></a>最终效果</h2><p><img src="https://s1.ax1x.com/2022/08/08/vMk6mt.png" alt="远景效果"><br><img src="https://s1.ax1x.com/2022/08/08/vMkc0P.png" alt="近景细节"></p>
+
                 
             </div>
             <hr/>
@@ -398,7 +378,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://xiyunyun.github.io/2020/08/02/%E8%99%9A%E5%B9%BB5%E5%92%8Cblender%E7%9A%84%E4%BA%A4%E4%BA%92%E7%AC%94%E8%AE%B0/">https://xiyunyun.github.io/2020/08/02/%E8%99%9A%E5%B9%BB5%E5%92%8Cblender%E7%9A%84%E4%BA%A4%E4%BA%92%E7%AC%94%E8%AE%B0/</a>
+                    <a href="https://xiyunyun.github.io/2022/08/08/blender%E5%88%9B%E5%BB%BA%E4%B8%9D%E8%A2%9C%E6%9D%90%E8%B4%A8/">https://xiyunyun.github.io/2022/08/08/blender%E5%88%9B%E5%BB%BA%E4%B8%9D%E8%A2%9C%E6%9D%90%E8%B4%A8/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -438,10 +418,6 @@
                             
                                 <a href="/tags/Blender/">
                                     <span class="chip bg-color">Blender</span>
-                                </a>
-                            
-                                <a href="/tags/Unreal5/">
-                                    <span class="chip bg-color">Unreal5</span>
                                 </a>
                             
                         </div>
@@ -619,28 +595,29 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/08/08/%E4%BB%8E%E9%9B%B6%E6%9E%84%E5%BB%BA%E5%8D%A1%E9%80%9A%E6%9D%90%E8%B4%A8%E7%9A%84%E6%B8%B2%E6%9F%93%E7%95%99/">
+                <a href="/2022/09/02/UE5%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84/">
                     <div class="card-image">
                         
-                        <img src="/medias/blog_img/reproduction%20(2).png" class="responsive-img" alt="从零开始创建卡通材质">
                         
-                        <span class="card-title">从零开始创建卡通材质</span>
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="UE5入门文件结构">
+                        
+                        <span class="card-title">UE5入门文件结构</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            从零开始创建卡通材质流
+                            UE5入门文件结构解析
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-08-08
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-09-02
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
-                            熙云
+                            Xi Yun
                             
                         </span>
                     </div>
@@ -648,12 +625,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Blender/">
-                        <span class="chip bg-color">Blender</span>
+                    <a href="/tags/Unreal5/">
+                        <span class="chip bg-color">Unreal5</span>
                     </a>
                     
-                    <a href="/tags/%E6%8A%80%E6%9C%AF%E7%BE%8E%E6%9C%AF/">
-                        <span class="chip bg-color">技术美术</span>
+                    <a href="/tags/Docs/">
+                        <span class="chip bg-color">Docs</span>
                     </a>
                     
                 </div>
@@ -667,24 +644,24 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/07/26/tags/index/">
+                <a href="/2022/07/25/node.js%E4%B8%8Ehexo%E6%90%AD%E9%85%8Dgithub%E6%90%AD%E5%BB%BA%E7%BD%91%E7%AB%99/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="分类">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="node.js与hexo搭配github搭建网站">
                         
-                        <span class="card-title">分类</span>
+                        <span class="card-title">node.js与hexo搭配github搭建网站</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            node.js与hexo搭配github搭建网站的过程记录
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-26
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-07-25
                             </span>
                         <span class="publish-author">
                             
@@ -697,8 +674,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%A5%BD%E4%B9%A0%E6%83%AF/">
-                        <span class="chip bg-color">好习惯</span>
+                    <a href="/tags/Hexo/">
+                        <span class="chip bg-color">Hexo</span>
+                    </a>
+                    
+                    <a href="/tags/HTML/">
+                        <span class="chip bg-color">HTML</span>
                     </a>
                     
                 </div>

@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="归档: 2020, 云儿飘过的地方">
+    <meta name="keywords" content="标签: Unreal5, 云儿飘过的地方">
     <meta name="description" content="熙云,云儿停泊的天空,云飘过的地方">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -28,7 +28,7 @@
     </style>
 
 
-    <title>归档: 2020 | 云儿飘过的地方</title>
+    <title>标签: Unreal5 | 云儿飘过的地方</title>
     <link rel="icon" type="image/png" href="/%E4%BA%91.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -194,333 +194,154 @@
 <main class="content">
 
     
-    <div class="container archive-calendar">
+
+<div id="tags" class="container chip-container">
     <div class="card">
-        <div id="post-calendar" class="card-content"></div>
+        <div class="card-content">
+            <div class="tag-title center-align">
+                <i class="fas fa-tags"></i>&nbsp;&nbsp;文章标签
+            </div>
+            <div class="tag-chips">
+                
+                
+                <a href="/tags/Hexo/" title="Hexo: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="Hexo" style="background-color: #F9EBEA;">Hexo
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/HTML/" title="HTML: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="HTML" style="background-color: #F5EEF8;">HTML
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E6%A1%A3%E6%A1%88/" title="档案: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="档案" style="background-color: #D5F5E3;">档案
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E5%A5%BD%E4%B9%A0%E6%83%AF/" title="好习惯: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="好习惯" style="background-color: #E8F8F5;">好习惯
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Blender/" title="Blender: 4">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="Blender" style="background-color: #FEF9E7;">Blender
+                        <span class="tag-length">4</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E6%8A%80%E6%9C%AF%E7%BE%8E%E6%9C%AF/" title="技术美术: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="技术美术" style="background-color: #F8F9F9;">技术美术
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Unreal5/" title="Unreal5: 2">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-active "
+                            data-tagname="Unreal5" style="background-color: #82E0AA;">Unreal5
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Docs/" title="Docs: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="Docs" style="background-color: #D7BDE2;">Docs
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+            </div>
+        </div>
     </div>
 </div>
 
-<script type="text/javascript" src="/libs/echarts/echarts.min.js"></script>
-<script type="text/javascript">
-    let myChart = echarts.init(document.getElementById('post-calendar'));
-
     
 
-        let option = {
-            title: {
-                top: 0,
-                text: '文章日历',
-                left: 'center',
-                textStyle: {
-                    color: '#3C4858'
-                }
-            },
-            tooltip: {
-                padding: 10,
-                backgroundColor: '#555',
-                borderColor: '#777',
-                borderWidth: 1,
-                formatter: function (obj) {
-                    var value = obj.value;
-                    return '<div style="font-size: 14px;">' + value[0] + '：' + value[1] + '</div>';
-                }
-            },
-            visualMap: {
-                show: true,
-                showLabel: true,
-                categories: [0, 1, 2, 3, 4],
-                calculable: true,
-                inRange: {
-                    symbol: 'rect',
-                    color: ['#ebedf0', '#c6e48b', '#7bc96f', '#239a3b', '#196127']
-                },
-                itemWidth: 12,
-                itemHeight: 12,
-                orient: 'horizontal',
-                left: 'center',
-                bottom: 0
-            },
-            calendar: [{
-                left: 'center',
-                range: ,
-                cellSize: [13, 13],
-                splitLine: {
-                    show: false
-                },
-                itemStyle: {
-                    color: '#196127',
-                    borderColor: '#fff',
-                    borderWidth: 2
-                },
-                yearLabel: {
-                    show: false
-                },
-                monthLabel: {
-                    nameMap: 'cn',
-                    fontSize: 11
-                },
-                dayLabel: {
-                    formatter: '{start}  1st',
-                    nameMap: 'cn',
-                    fontSize: 11
-                }
-            }],
-            series: [{
-                type: 'heatmap',
-                coordinateSystem: 'calendar',
-                calendarIndex: 0,
-                data: 
-        }]
-
-        };
-
-    myChart.setOption(option);
-</script>
-    
-
-    
-
-    <div id="cd-timeline" class="container">
-        
-        <div class="cd-timeline-block">
-
+    <article id="articles" class="container articles">
+        <div class="row tags-posts">
             
             
-            
-            <div class="cd-timeline-img year" data-aos="zoom-in-up">
-                <a href="/archives/2020">2020</a>
-            </div>
-            
-
-            
-            
-            
-            <div class="cd-timeline-img month" data-aos="zoom-in-up">
-                <a href="/archives/2020/08">08</a>
-            </div>
-            
-
-            
-            <div class="cd-timeline-img day" data-aos="zoom-in-up">
-                <span>08</span>
-            </div>
-            <article class="cd-timeline-content" data-aos="fade-up">
-                <div class="article col s12 m6">
-                    <div class="card">
-                        <a href="/2020/08/08/%E4%BB%8E%E9%9B%B6%E6%9E%84%E5%BB%BA%E5%8D%A1%E9%80%9A%E6%9D%90%E8%B4%A8%E7%9A%84%E6%B8%B2%E6%9F%93%E7%95%99/">
-                            <div class="card-image">
-                                
-                                <img src="/medias/blog_img/reproduction%20(2).png" class="responsive-img" alt="从零开始创建卡通材质">
-                                
-                                <span class="card-title">从零开始创建卡通材质</span>
-                            </div>
-                        </a>
-                        <div class="card-content article-content">
-                            <div class="summary block-with-text">
-                                
-                                    从零开始创建卡通材质流
-                                
-                            </div>
-                            <div class="publish-info">
-                                <span class="publish-date">
-                                    <i class="far fa-clock fa-fw icon-date"></i>2020-08-08
-                                </span>
-                                <span class="publish-author">
-                                    
-                                    <i class="fas fa-user fa-fw"></i>
-                                    熙云
-                                    
-                                </span>
-                            </div>
+            <div class="article tag-post col s12 m6 l4" data-tags="Unreal5, Docs" data-aos="fade-up">
+                <div class="card">
+                    <a href="/2022/09/02/UE5%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84/">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="UE5入门文件结构">
+                            
+                            <span class="card-title">UE5入门文件结构</span>
                         </div>
-
-                        
-                        <div class="card-action article-tags">
-                            
-                            <a href="/tags/Blender/"><span class="chip bg-color">Blender</span></a>
-                            
-                            <a href="/tags/%E6%8A%80%E6%9C%AF%E7%BE%8E%E6%9C%AF/"><span class="chip bg-color">技术美术</span></a>
-                            
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-09-02
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-user fa-fw"></i>
+                                Xi Yun
+                                
+                            </span>
                         </div>
-                        
                     </div>
                 </div>
-            </article>
-        </div>
-        
-        <div class="cd-timeline-block">
-
-            
-            
-
-            
-            
-
-            
-            <div class="cd-timeline-img day" data-aos="zoom-in-up">
-                <span>02</span>
             </div>
-            <article class="cd-timeline-content" data-aos="fade-up">
-                <div class="article col s12 m6">
-                    <div class="card">
-                        <a href="/2020/08/02/%E8%99%9A%E5%B9%BB5%E5%92%8Cblender%E7%9A%84%E4%BA%A4%E4%BA%92%E7%AC%94%E8%AE%B0/">
-                            <div class="card-image">
-                                
-                                <img src="/" class="responsive-img" alt="虚幻5和blender的交互逻辑">
-                                
-                                <span class="card-title">虚幻5和blender的交互逻辑</span>
-                            </div>
-                        </a>
-                        <div class="card-content article-content">
-                            <div class="summary block-with-text">
-                                
-                                    虚幻5和blender的交互逻辑笔记
-                                
-                            </div>
-                            <div class="publish-info">
-                                <span class="publish-date">
-                                    <i class="far fa-clock fa-fw icon-date"></i>2020-08-02
-                                </span>
-                                <span class="publish-author">
-                                    
-                                    <i class="fas fa-user fa-fw"></i>
-                                    熙云
-                                    
-                                </span>
-                            </div>
+            
+            
+            <div class="article tag-post col s12 m6 l4" data-tags="Blender, Unreal5" data-aos="fade-up">
+                <div class="card">
+                    <a href="/2020/08/02/%E8%99%9A%E5%B9%BB5%E5%92%8Cblender%E7%9A%84%E4%BA%A4%E4%BA%92%E7%AC%94%E8%AE%B0/">
+                        <div class="card-image tag-image">
+                            
+                            <img src="/" class="responsive-img" alt="虚幻5和blender的交互逻辑">
+                            
+                            <span class="card-title">虚幻5和blender的交互逻辑</span>
                         </div>
-
-                        
-                        <div class="card-action article-tags">
-                            
-                            <a href="/tags/Blender/"><span class="chip bg-color">Blender</span></a>
-                            
-                            <a href="/tags/Unreal5/"><span class="chip bg-color">Unreal5</span></a>
-                            
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-02
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-user fa-fw"></i>
+                                熙云
+                                
+                            </span>
                         </div>
-                        
                     </div>
                 </div>
-            </article>
-        </div>
-        
-        <div class="cd-timeline-block">
-
-            
-            
-
-            
-            
-            
-            <div class="cd-timeline-img month" data-aos="zoom-in-up">
-                <a href="/archives/2020/07">07</a>
             </div>
             
-
-            
-            <div class="cd-timeline-img day" data-aos="zoom-in-up">
-                <span>26</span>
-            </div>
-            <article class="cd-timeline-content" data-aos="fade-up">
-                <div class="article col s12 m6">
-                    <div class="card">
-                        <a href="/2020/07/26/tags/index/">
-                            <div class="card-image">
-                                
-                                
-                                <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="分类">
-                                
-                                <span class="card-title">分类</span>
-                            </div>
-                        </a>
-                        <div class="card-content article-content">
-                            <div class="summary block-with-text">
-                                
-                                    养成分类的好习惯
-                                
-                            </div>
-                            <div class="publish-info">
-                                <span class="publish-date">
-                                    <i class="far fa-clock fa-fw icon-date"></i>2020-07-26
-                                </span>
-                                <span class="publish-author">
-                                    
-                                    <i class="fas fa-user fa-fw"></i>
-                                    Xi Yun
-                                    
-                                </span>
-                            </div>
-                        </div>
-
-                        
-                        <div class="card-action article-tags">
-                            
-                            <a href="/tags/%E5%A5%BD%E4%B9%A0%E6%83%AF/"><span class="chip bg-color">好习惯</span></a>
-                            
-                        </div>
-                        
-                    </div>
-                </div>
-            </article>
         </div>
-        
-        <div class="cd-timeline-block">
-
-            
-            
-
-            
-            
-
-            
-            <div class="cd-timeline-img day" data-aos="zoom-in-up">
-                <span>25</span>
-            </div>
-            <article class="cd-timeline-content" data-aos="fade-up">
-                <div class="article col s12 m6">
-                    <div class="card">
-                        <a href="/2020/07/25/about/index/">
-                            <div class="card-image">
-                                
-                                
-                                <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="关于熙云">
-                                
-                                <span class="card-title">关于熙云</span>
-                            </div>
-                        </a>
-                        <div class="card-content article-content">
-                            <div class="summary block-with-text">
-                                
-                                    这里是熙云
-                                
-                            </div>
-                            <div class="publish-info">
-                                <span class="publish-date">
-                                    <i class="far fa-clock fa-fw icon-date"></i>2020-07-25
-                                </span>
-                                <span class="publish-author">
-                                    
-                                    <i class="fas fa-user fa-fw"></i>
-                                    Xi Yun
-                                    
-                                </span>
-                            </div>
-                        </div>
-
-                        
-                        <div class="card-action article-tags">
-                            
-                            <a href="/tags/%E6%A1%A3%E6%A1%88/"><span class="chip bg-color">档案</span></a>
-                            
-                        </div>
-                        
-                    </div>
-                </div>
-            </article>
-        </div>
-        
-    </div>
-
+    </article>
 </main>
 
 
