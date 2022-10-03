@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="虚幻5和blender的交互逻辑, 云儿飘过的地方">
-    <meta name="description" content="虚幻5和blender的交互逻辑笔记">
+    <meta name="keywords" content="【blender技巧#2】完美球体, 云儿飘过的地方">
+    <meta name="description" content="blender创建完美球体">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -28,7 +28,7 @@
     </style>
 
 
-    <title>虚幻5和blender的交互逻辑 | 云儿飘过的地方</title>
+    <title>【blender技巧#2】完美球体 | 云儿飘过的地方</title>
     <link rel="icon" type="image/png" href="/%E4%BA%91.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -149,12 +149,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">虚幻5和blender的交互逻辑</h1>
+                    <h1 class="description center-align post-title">【blender技巧#2】完美球体</h1>
                 </div>
             </div>
         </div>
@@ -274,10 +274,6 @@
                                 <span class="chip bg-color">Blender</span>
                             </a>
                         
-                            <a href="/tags/Unreal5/">
-                                <span class="chip bg-color">Unreal5</span>
-                            </a>
-                        
                     </div>
                     
                 </div>
@@ -290,21 +286,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-08-02
+                    2022-10-03
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-09-30
+                    2022-10-03
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    502
+                    473
                 </div>
                 
 
@@ -331,48 +327,22 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="《虚幻5和blender的交互逻辑》"><a href="#《虚幻5和blender的交互逻辑》" class="headerlink" title="《虚幻5和blender的交互逻辑》"></a>《虚幻5和blender的交互逻辑》</h1><blockquote>
-<h1 id="分离材质纹理贴图以及模型本身"><a href="#分离材质纹理贴图以及模型本身" class="headerlink" title="分离材质纹理贴图以及模型本身"></a>分离材质纹理贴图以及模型本身</h1></blockquote>
-<h2 id="1-贴图与纹理"><a href="#1-贴图与纹理" class="headerlink" title="1. 贴图与纹理"></a>1. 贴图与纹理</h2><h3 id="1-1-法线贴图的基本设置"><a href="#1-1-法线贴图的基本设置" class="headerlink" title="1.1 法线贴图的基本设置"></a>1.1 法线贴图的基本设置</h3><p>1.压缩方式应为法线模式</p>
-<p>2.分组应在世界法线贴图组 （并不是必须的）</p>
-<p>3.确保sRGB为关闭状态，法线贴图并没有颜色信息</p>
-<h3 id="1-2-纹理贴图的基本设置"><a href="#1-2-纹理贴图的基本设置" class="headerlink" title="1.2 纹理贴图的基本设置"></a>1.2 纹理贴图的基本设置</h3><p>1.压缩方式为默认纹理</p>
-<p>2.分组在世界贴图中</p>
-<p>3.确保sRGB为打开状态，纹理贴图为包含颜色信息，为颜色纹理</p>
-<h3 id="1-3-粗糙度纹理"><a href="#1-3-粗糙度纹理" class="headerlink" title="1.3 粗糙度纹理"></a>1.3 粗糙度纹理</h3><ol>
-<li><p>压缩方式为默认纹理</p>
-</li>
-<li><p>分组在世界贴图中</p>
-</li>
-<li><p>确保sRGB为关闭状态，粗糙度纹理并没有颜色信息</p>
-</li>
+                <h1 id="《blender创建完美球体》"><a href="#《blender创建完美球体》" class="headerlink" title="《blender创建完美球体》"></a>《blender创建完美球体》</h1><h2 id="1-三维世界中完美球体的概念定义"><a href="#1-三维世界中完美球体的概念定义" class="headerlink" title="1.三维世界中完美球体的概念定义"></a>1.三维世界中完美球体的概念定义</h2><ol>
+<li>球体的底部和顶部，不应该是三角面，三角面会导致N-gon线和极点的出现，即指一个顶点连接超过5条边或者少于四条边的顶点。在建模中要尽量避免极点的出现，尤其是在拐角处要尽最大程度避免开来。否则会导致入细分曲面后出现变形，以及在渲染出现死黑等情况。</li>
+<li>而三维软件创造的默认球体，都并不是完美球体，所以我们需要对球体重新拓扑<br><img src="https://github.com/xiyunyun/Image/blob/main/Blender_Image/%E9%94%99%E8%AF%AF%E7%9A%84%E7%90%83%E4%BD%93.png?raw=true" alt="三角面如图"></li>
 </ol>
-<h3 id="1-4-模型本身"><a href="#1-4-模型本身" class="headerlink" title="1.4 模型本身"></a>1.4 模型本身</h3><h4 id="1-1-格式的导出和导入"><a href="#1-1-格式的导出和导入" class="headerlink" title="1.1 格式的导出和导入"></a>1.1 格式的导出和导入</h4><ol>
-<li><p>支持的模型格式中，纯粹的网格体fbx的还原效果为最佳</p>
-</li>
-<li><p>在理想情况下，导入最纯粹的白模，并且在材质节点工具中，将单独的材质纹理法线进行单独的节点控制，已达到最完美的效果</p>
-</li>
+<h2 id="2-如何创建一个完美的圆，以及正确的拓扑"><a href="#2-如何创建一个完美的圆，以及正确的拓扑" class="headerlink" title="2.如何创建一个完美的圆，以及正确的拓扑"></a>2.如何创建一个完美的圆，以及正确的拓扑</h2><ol>
+<li>创建一个正方体，为正方体加入3级表面细分，此时我的得到的是一个四边形拓扑出的圆，他没有极向和三角面，但他依然不完美，因为他的形状并不是完美的圆比例</li>
+<li>所以我们将形状完美但是拓扑并不完美的基础球体模型启用，为我们刚刚创建的完美拓扑球体添加”缩裹”修改器，并且选择基础球体为对象，至此还没结束 因为边线的角度并不对</li>
+<li>我们先将基础球体添加一样等级的表面细分，接着将”缩裹”修改器中的最近目标点，修改为阴影，其实就是法线方向，这时，球体的角度和形状就达到了完美</li>
+<li>应用“表面细分”和“缩裹”修改器。添加实体化和一级表面细分，此时我们就得到了一个实体的完美球体</li>
 </ol>
-<h4 id="1-2-MMD模型转换格式导入UE"><a href="#1-2-MMD模型转换格式导入UE" class="headerlink" title="1.2 MMD模型转换格式导入UE"></a>1.2 MMD模型转换格式导入UE</h4><ol>
-<li>将PMX文件通过MMD_Tools导入blender，将材质纹理转换为blender样式</li>
-<li>删除模型的刚体和关节层级（一定要删除层次）</li>
-<li>点击骨架，导出为FBX</li>
-<li>打开UE，导入FBX文件，如果需要动画就导入动画，如果不需要动画就取消勾选（FBX会分离所有的单独材质文件，如果出现材质显示的问题，请打开模型查看贴图元素是否错位）</li>
+<p><img src="https://github.com/xiyunyun/Image/blob/main/Blender_Image/%E6%AD%A3%E7%A1%AE%E7%9A%84%E7%90%83%E4%BD%93.png?raw=true" alt="正确球体"></p>
+<h2 id="3-插件实现"><a href="#3-插件实现" class="headerlink" title="3.插件实现"></a>3.插件实现</h2><ol>
+<li>我们可以装上M3插件，实现直接生成完美球体</li>
+<li>在shift+A的网格选项中，选择第一个四边球即可</li>
 </ol>
-<blockquote>
-<h1 id="Unreal导入Blender纹理材质节点设置"><a href="#Unreal导入Blender纹理材质节点设置" class="headerlink" title="Unreal导入Blender纹理材质节点设置"></a>Unreal导入Blender纹理材质节点设置</h1></blockquote>
-<h2 id="2-共同的基础节点"><a href="#2-共同的基础节点" class="headerlink" title="2. 共同的基础节点"></a>2. 共同的基础节点</h2><h3 id="2-1-UV节点"><a href="#2-1-UV节点" class="headerlink" title="2.1 UV节点"></a>2.1 UV节点</h3><ol>
-<li>UV节点用来连接基本的纹理</li>
-</ol>
-<h3 id="2-2-normal节点"><a href="#2-2-normal节点" class="headerlink" title="2.2 normal节点"></a>2.2 normal节点</h3><ol>
-<li>normal节点用来连接法线纹理</li>
-</ol>
-<h3 id="2-3-粗糙度节点"><a href="#2-3-粗糙度节点" class="headerlink" title="2.3 粗糙度节点"></a>2.3 粗糙度节点</h3><ol>
-<li>粗糙度节点用来连粗糙度纹理</li>
-</ol>
-<blockquote>
-<h1 id="Unreal与Blender两者之间不同的图形接口问题"><a href="#Unreal与Blender两者之间不同的图形接口问题" class="headerlink" title="Unreal与Blender两者之间不同的图形接口问题"></a>Unreal与Blender两者之间不同的图形接口问题</h1></blockquote>
-<h2 id="3-贴图格式问题"><a href="#3-贴图格式问题" class="headerlink" title="3. 贴图格式问题"></a>3. 贴图格式问题</h2><h3 id="3-1"><a href="#3-1" class="headerlink" title="3.1"></a>3.1</h3>
+
                 
             </div>
             <hr/>
@@ -398,7 +368,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://xiyunyun.github.io/2022/08/02/%E8%99%9A%E5%B9%BB5%E5%92%8Cblender%E7%9A%84%E4%BA%A4%E4%BA%92%E7%AC%94%E8%AE%B0/">https://xiyunyun.github.io/2022/08/02/%E8%99%9A%E5%B9%BB5%E5%92%8Cblender%E7%9A%84%E4%BA%A4%E4%BA%92%E7%AC%94%E8%AE%B0/</a>
+                    <a href="https://xiyunyun.github.io/2022/10/03/blender%E6%8A%80%E5%B7%A7%E4%B9%8B%EF%BC%9A%E5%AE%8C%E7%BE%8E%E7%90%83%E4%BD%93/">https://xiyunyun.github.io/2022/10/03/blender%E6%8A%80%E5%B7%A7%E4%B9%8B%EF%BC%9A%E5%AE%8C%E7%BE%8E%E7%90%83%E4%BD%93/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -438,10 +408,6 @@
                             
                                 <a href="/tags/Blender/">
                                     <span class="chip bg-color">Blender</span>
-                                </a>
-                            
-                                <a href="/tags/Unreal5/">
-                                    <span class="chip bg-color">Unreal5</span>
                                 </a>
                             
                         </div>
@@ -615,28 +581,30 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2022/08/08/blender%E5%88%9B%E5%BB%BA%E4%B8%9D%E8%A2%9C%E6%9D%90%E8%B4%A8/">
+                <a href="/2022/10/03/blender%E6%8A%80%E5%B7%A7%E4%B9%8B%EF%BC%9A%E5%AE%8C%E7%BE%8E%E7%90%83%E4%BD%93/">
                     <div class="card-image">
                         
-                        <img src="/medias/blog_img/reproduction%20(2).png" class="responsive-img" alt="blender创建丝袜材质">
                         
-                        <span class="card-title">blender创建丝袜材质</span>
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="【blender技巧#2】完美球体">
+                        
+                        <span class="card-title">【blender技巧#2】完美球体</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            blender创建丝袜材质流
+                            blender创建完美球体
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-08-08
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-10-03
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -645,6 +613,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -663,29 +632,29 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/07/25/node.js%E4%B8%8Ehexo%E6%90%AD%E9%85%8Dgithub%E6%90%AD%E5%BB%BA%E7%BD%91%E7%AB%99/">
+                <a href="/2022/09/30/%E4%BD%BF%E7%94%A8github%E5%88%9B%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E4%BB%BB%E6%84%8F%E5%BA%93/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="node.js与hexo搭配github搭建网站">
+                        <img src="/medias/featureimages/c.jpg" class="responsive-img" alt="使用github创建自己的任意库">
                         
-                        <span class="card-title">node.js与hexo搭配github搭建网站</span>
+                        <span class="card-title">使用github创建自己的任意库</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            node.js与hexo搭配github搭建网站的过程记录
+                            使用github创建自己的任意库
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-07-25
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-09-30
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
-                            Xi Yun
+                            熙云
                             
                         </span>
                     </div>
@@ -693,12 +662,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Hexo/">
-                        <span class="chip bg-color">Hexo</span>
-                    </a>
-                    
-                    <a href="/tags/HTML/">
-                        <span class="chip bg-color">HTML</span>
+                    <a href="/tags/%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/">
+                        <span class="chip bg-color">使用技巧</span>
                     </a>
                     
                 </div>
